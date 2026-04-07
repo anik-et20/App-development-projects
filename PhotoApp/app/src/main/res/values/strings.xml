@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Photo App</string>
+    <string name="Gallery">"📁 Open Gallery</string>
+    <string name="delete">Delete</string>
+    <string name="photo_gallery">Photo Gallery</string>
+    <string name="take_photo_new">📷 Take Photo</string>
+</resources>
