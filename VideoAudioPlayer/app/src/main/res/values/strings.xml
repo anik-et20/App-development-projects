@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Video Audio Player</string>
+
+    <!-- General -->
+    <string name="enter">Enter</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+
+    <!-- Titles -->
+    <string name="title_main">Media Player</string>
+    <string name="video_header">Video Player</string>
+    <string name="audio_header">Audio Player</string>
+
+    <!-- Buttons -->
+    <string name="btn_load_url">Play Online Video</string>
+    <string name="btn_restart">Restart</string>
+    <string name="btn_select_video">Select Video</string>
+    <string name="btn_open_audio">Open Audio</string>
+
+    <!-- Status -->
+    <string name="no_file">No file selected</string>
+    <string name="status_loaded">Loaded: %1$s</string>
+    <string name="status_playing">Playing</string>
+    <string name="status_paused">Paused</string>
+    <string name="status_stopped">Stopped</string>
+
+    <!-- Accessibility -->
+    <string name="desc_play">Play audio</string>
+    <string name="desc_pause">Pause audio</string>
+    <string name="desc_stop">Stop audio</string>
+</resources>
