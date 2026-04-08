@@ -33,16 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
         checkpermissions();
 
-        // 📸 Camera
+        // Camera
         btncamera.setOnClickListener(v -> openCamera());
 
-        // 🖼 Gallery (UPDATED)
+        // Gallery Folder
         btngallery.setOnClickListener(v -> openFolderPicker());
     }
 
 
 
-    // ✅ Permissions
+    // Permissions
     private void checkpermissions(){
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
                 checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // 📸 Open Camera
+    // Open Camera
     private void openCamera(){
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.TITLE, "New Picture");
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, CAMERA_REQUEST);
     }
 
-    // ✅ Handle Results
+    // Handle Results
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

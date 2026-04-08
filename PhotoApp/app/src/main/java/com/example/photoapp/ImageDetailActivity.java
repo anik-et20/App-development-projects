@@ -38,7 +38,7 @@ public class ImageDetailActivity extends AppCompatActivity {
         deletebtn.setOnClickListener(v -> showDeleteDialog());
     }
 
-    // 🔴 Confirmation Dialog
+    // Confirmation Dialog
     private void showDeleteDialog(){
         new AlertDialog.Builder(this)
                 .setTitle("Delete Image")
@@ -48,7 +48,7 @@ public class ImageDetailActivity extends AppCompatActivity {
                 .show();
     }
 
-    // 🗑 Delete Image
+    // Delete Image
     private void deleteImage(){
         try {
             getContentResolver().delete(imageUri, null, null);
@@ -60,7 +60,7 @@ public class ImageDetailActivity extends AppCompatActivity {
         }
     }
 
-    // 📄 Show Image Details
+    // Show Image Details
     private void showDetails() {
 
         String name = "Unknown";
@@ -68,7 +68,7 @@ public class ImageDetailActivity extends AppCompatActivity {
         String date = "Unknown";
         String path = imageUri.toString();
 
-        // 🔹 Get name & size using cursor
+        //  Get name & size using cursor
         Cursor cursor = getContentResolver().query(imageUri, null, null, null, null);
 
         if (cursor != null && cursor.moveToFirst()) {
@@ -87,7 +87,7 @@ public class ImageDetailActivity extends AppCompatActivity {
             cursor.close();
         }
 
-        // 🔹 Get date using DocumentFile
+        //  Get date using DocumentFile
         DocumentFile file = DocumentFile.fromSingleUri(this, imageUri);
         if (file != null) {
             long lastModified = file.lastModified();
@@ -98,7 +98,7 @@ public class ImageDetailActivity extends AppCompatActivity {
             }
         }
 
-        // 🔹 Final details text
+        // Final details text
         String details = "Name: " + name +
                 "\nPath: " + path +
                 "\nSize: " + size +

@@ -26,6 +26,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate item layout
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.image_item, parent, false);
         return new ImageViewHolder(view);
@@ -36,11 +37,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         Uri imageUri = imageList.get(position);
 
-        // ✅ Set image safely
+        // Set image safely
         holder.imageView.setImageURI(null); // clear old image
         holder.imageView.setImageURI(imageUri);
 
-        // ✅ Click listener
+        // Click listener
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ImageDetailActivity.class);
             intent.putExtra("imageUri", imageUri.toString());
@@ -52,9 +53,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public int getItemCount() {
         return imageList != null ? imageList.size() : 0;
     }
-
+    // ViewHolder for image item
     public static class ImageViewHolder extends RecyclerView.ViewHolder {
-
         ImageView imageView;
 
         public ImageViewHolder(@NonNull View itemView) {
