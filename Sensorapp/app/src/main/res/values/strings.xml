@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sensor app</string>
-    <string name="accelerometer">📱 Accelerometer:</string>
-    <string name="light">💡 Light:</string>
-    <string name="proximity">📏 Proximity</string>
+    <string name="app_name">Sensor App</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="light">Light</string>
+    <string name="proximity">Proximity</string>
 </resources>

@@ -42,29 +42,30 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onPause() {
         super.onPause();
+        // Unregister to save battery
         sensorManager.unregisterListener(this);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
     public void onSensorChanged(SensorEvent event) {
-
+        // Accelerometer values
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             float x = event.values[0];
             float y = event.values[1];
             float z = event.values[2];
 
-            accelText.setText("Accelerometer:\nX: " + x + "\nY: " + y + "\nZ: " + z);
+            accelText.setText(String.format("X: %.2f\nY: %.2f\nZ: %.2f m/s²", x, y, z));
         }
-
+        // Light sensor value
         if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
             float light = event.values[0];
-            lightText.setText("Light: " + light + " lx");
+            lightText.setText(String.format("%.1f lx", light));
         }
-
+        // Proximity sensor value
         if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
             float proximity = event.values[0];
-            proximityText.setText("Proximity: " + proximity + " cm");
+            proximityText.setText(String.format("%.1f cm", proximity));
         }
     }
 
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onResume() {
         super.onResume();
-
+        // Register listeners when app is active
         if (accelerometer != null) {
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
         }
