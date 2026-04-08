@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
                             Intent i = new Intent(MainActivity.this, Settings.class);
                             startActivity(i);
 
-                            //finish() is called to remove this activity from the Back Stack,
-                            // so that user does not come back to this current activity on clicking Back
                             finish();
                             return true;
                         }
@@ -75,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    //Currency converter
     @SuppressLint("DefaultLocale")
     private void convertCurrency() {
         String from = fromSpinner.getSelectedItem().toString();
